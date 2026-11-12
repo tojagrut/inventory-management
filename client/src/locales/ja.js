@@ -6,6 +6,10 @@ export default {
     orders: '注文',
     finance: '財務',
     demandForecast: '需要予測',
+    reports: 'レポート',
+    mainNavigation: 'メイン',
+    expandSidebar: 'サイドバーを展開',
+    collapseSidebar: 'サイドバーを折りたたむ',
     companyName: '触媒コンポーネンツ',
     subtitle: '在庫管理システム'
   },
@@ -185,6 +189,41 @@ export default {
       change: '変化',
       trend: 'トレンド',
       period: '期間'
+    }
+  },
+
+  // Reports
+  reports: {
+    title: 'パフォーマンスレポート',
+    description: '四半期ごとの業績指標と月別トレンドを表示',
+    loadError: 'レポートの読み込みに失敗しました',
+    noData: '選択したフィルターに該当するデータがありません',
+    quarterly: {
+      title: '四半期別業績',
+      quarter: '四半期',
+      totalOrders: '総注文数',
+      totalRevenue: '総収益',
+      avgOrderValue: '平均注文額',
+      fulfillmentRate: '履行率'
+    },
+    trend: {
+      title: '月別収益トレンド',
+      chartLabel: '月別収益の棒グラフ'
+    },
+    mom: {
+      title: '前月比分析',
+      month: '月',
+      orders: '注文数',
+      revenue: '収益',
+      change: '増減',
+      growthRate: '成長率',
+      notAvailable: '該当なし'
+    },
+    stats: {
+      totalRevenue: '総収益',
+      avgMonthlyRevenue: '月平均収益',
+      totalOrders: '総注文数',
+      bestQuarter: '最高業績の四半期'
     }
   },
 

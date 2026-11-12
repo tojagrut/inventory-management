@@ -519,8 +519,15 @@ export default {
 
 .chart-legend {
   display: flex;
-  gap: 1.5rem;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
   font-size: 0.875rem;
+}
+
+/* Let the title and legend stack on narrow screens (.card-header itself is global). */
+.chart-card .card-header {
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-4);
 }
 
 .legend-item {
@@ -611,12 +618,15 @@ export default {
 
 .chart-container {
   padding: 1.5rem 0;
+  /* On narrow screens scroll the chart inside the card instead of widening the page. */
+  overflow-x: auto;
 }
 
 .bar-chart {
   display: flex;
   gap: 1.5rem;
   height: 350px;
+  min-width: 560px; /* keeps bars readable; the container scrolls below this width */
 }
 
 .y-axis {
@@ -694,7 +704,7 @@ export default {
 
 .two-column-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(450px, 100%), 1fr));
   gap: 1.75rem;
 }
 
@@ -770,6 +780,7 @@ export default {
 }
 
 .transactions-table-container {
+  overflow-x: auto;
   overflow-y: auto;
   max-height: 400px;
 }
