@@ -1,0 +1,19 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "backend",
+      "runtimeExecutable": "server/.venv/bin/python",
+      "runtimeArgs": ["server/main.py"],
+      "port": 8001,
+      "url": "http://localhost:8001"
+    },
+    {
+      "name": "frontend",
+      "runtimeExecutable": "/bin/zsh",
+      "runtimeArgs": ["-c", "export NVM_DIR=\"$HOME/.nvm\"; . \"$NVM_DIR/nvm.sh\"; cd client && npm run dev"],
+      "port": 3000,
+      "url": "http://localhost:3000"
+    }
+  ]
+}

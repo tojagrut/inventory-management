@@ -105,25 +105,27 @@ export default {
   background: #f8fafc;
   border-bottom: 1px solid #e2e8f0;
   padding: 0.75rem 0;
-  position: sticky;
-  top: 70px;
-  z-index: 90;
+  /* Stickiness now lives on the .app-filterbar wrapper in App.vue. */
 }
 
+/* Aligned with .app-content (same max width and horizontal padding). */
 .filters-container {
-  max-width: 1600px;
+  max-width: var(--content-max-width);
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 var(--space-8);
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 1rem;
 }
 
 .filters-grid {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 1rem;
-  flex: 1;
+  gap: 0.75rem 1rem;
+  flex: 1 1 0;
+  min-width: 0;
 }
 
 .filter-group {
@@ -139,6 +141,18 @@ export default {
   white-space: nowrap;
 }
 
+@media (max-width: 767px) {
+  .filters-container {
+    padding: 0 var(--space-4);
+  }
+
+  /* Two-up on phones; each group may shrink below its content width. */
+  .filter-group {
+    flex: 1 1 140px;
+    min-width: 0;
+  }
+}
+
 .filter-select {
   padding: 0.4rem 0.75rem;
   border: 1px solid #cbd5e1;
@@ -149,7 +163,8 @@ export default {
   cursor: pointer;
   transition: all 0.2s;
   font-weight: 500;
-  min-width: 140px;
+  min-width: 0;
+  flex: 1 1 140px;
 }
 
 .filter-select:hover {

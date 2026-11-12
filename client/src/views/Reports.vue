@@ -366,6 +366,8 @@ export default {
 .chart-container {
   padding: 2rem 1rem;
   min-height: 300px;
+  /* On narrow screens scroll the chart inside the card instead of widening the page. */
+  overflow-x: auto;
 }
 
 .bar-chart {
@@ -374,6 +376,7 @@ export default {
   justify-content: space-around;
   height: 250px;
   gap: 0.5rem;
+  min-width: 520px; /* keeps bars readable; the container scrolls below this width */
 }
 
 .bar-wrapper {

@@ -1,0 +1,82 @@
+/*
+ * Design token template for the SaaS sidebar redesign.
+ * Paste into the app's global stylesheet and replace the color values with
+ * the app's EXISTING palette (do not invent a new brand color).
+ * Defaults below are a neutral slate palette.
+ */
+:root {
+  /* Spacing: 4px scale. Use only these for padding, margin and gap. */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+
+  /* Radii */
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-pill: 999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 4px 12px rgba(15, 23, 42, 0.08);
+
+  /* Typography */
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, sans-serif;
+  --text-xs: 12px;
+  --text-sm: 13px;
+  --text-base: 14px;
+  --text-md: 16px;
+  --text-lg: 20px;
+  --text-xl: 24px;
+
+  /* Colors: surfaces and text */
+  --color-bg: #f8fafc;             /* app background behind content */
+  --color-surface: #ffffff;        /* cards, topbar */
+  --color-surface-subtle: #f1f5f9; /* table headers, hover */
+  --color-border: #e2e8f0;
+  --color-text: #0f172a;
+  --color-text-muted: #64748b;
+
+  /* Colors: sidebar (dark sidebar on light content is the common SaaS look) */
+  --color-sidebar-bg: #0f172a;
+  --color-sidebar-text: #cbd5e1;
+  --color-sidebar-text-active: #ffffff;
+  --color-sidebar-item-hover: rgba(255, 255, 255, 0.06);
+  --color-sidebar-item-active: rgba(255, 255, 255, 0.1);
+
+  /* Colors: accent and status */
+  --color-accent: #2563eb;
+  --color-focus-ring: rgba(37, 99, 235, 0.45);
+  --color-success: #16a34a;
+  --color-success-bg: #dcfce7;
+  --color-info: #2563eb;
+  --color-info-bg: #dbeafe;
+  --color-warning: #b45309;
+  --color-warning-bg: #fef3c7;
+  --color-danger: #dc2626;
+  --color-danger-bg: #fee2e2;
+
+  /* Layout */
+  --sidebar-width: 240px;
+  --sidebar-width-collapsed: 68px;
+  --topbar-height: 60px;
+  --content-max-width: 1440px;
+
+  /* Motion */
+  --transition-fast: 150ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --transition-fast: 0ms; }
+}
+
+/* Shared focus ring */
+:focus-visible {
+  outline: 2px solid var(--color-focus-ring);
+  outline-offset: 2px;
+}
